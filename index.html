@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="meta.title">Services Machines de Buanderie - Casablanca</title>
+
+  <!-- Tailwind (browser build) -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+  <style>
+    /* NO PHOTO BACKGROUND: only gradients */
+    .hero-bg {
+      background:
+        radial-gradient(1200px circle at 20% 20%, rgba(59,130,246,0.35), transparent 55%),
+        radial-gradient(1000px circle at 80% 30%, rgba(16,185,129,0.20), transparent 55%),
+        linear-gradient(135deg, #0b1220 0%, #0f172a 40%, #111827 100%);
+    }
+  </style>
+</head>
+
+<body class="font-sans text-gray-800 bg-gray-50">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md fixed w-full z-50 top-0">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <i class="fa-solid fa-industry text-blue-800 text-2xl mr-2"></i>
+          <span class="font-bold text-xl text-gray-900" data-i18n="brand.name">Lavomatique Industriel Casa</span>
+        </div>
+
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="#accueil" data-i18n="nav.home" class="text-gray-600 hover:text-blue-800 transition font-medium">Accueil</a>
+          <a href="#services" data-i18n="nav.services" class="text-gray-600 hover:text-blue-800 transition font-medium">Services Industriels</a>
+          <a href="#vente" data-i18n="nav.sales" class="text-gray-600 hover:text-blue-800 transition font-medium">Matériel Pro</a>
+
+          <!-- Language Switcher -->
+          <div class="relative group">
+            <button id="lang-current" type="button" class="flex items-center text-gray-600 hover:text-blue-800 font-medium">
+              <i class="fa-solid fa-globe mr-1"></i> <span id="lang-current-label">FR</span>
+              <i class="fa-solid fa-chevron-down text-xs ml-2"></i>
+            </button>
+
+            <div class="absolute right-0 mt-2 w-36 bg-white border border-gray-200 rounded-md shadow-lg hidden group-hover:block">
+              <button type="button" data-lang="fr" class="w-full text-left px-4 py-2 text-sm text-blue-800 bg-blue-50 font-bold">Français</button>
+              <button type="button" data-lang="ar" class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">العربية</button>
+              <button type="button" data-lang="en" class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">English</button>
+            </div>
+          </div>
+
+          <a href="#contact" data-i18n="nav.quote"
+             class="bg-blue-800 text-white px-5 py-2 rounded-md hover:bg-blue-900 transition shadow-md font-semibold">
+            Devis Professionnel
+          </a>
+        </div>
+
+        <!-- Mobile -->
+        <div class="md:hidden flex items-center space-x-3">
+          <button type="button" data-lang="fr" class="text-xs font-bold text-blue-800 border border-blue-200 px-2 py-1 rounded">FR</button>
+          <button type="button" data-lang="ar" class="text-xs font-bold text-gray-500 border border-gray-200 px-2 py-1 rounded">AR</button>
+          <button type="button" data-lang="en" class="text-xs font-bold text-gray-500 border border-gray-200 px-2 py-1 rounded">EN</button>
+
+          <button id="mobile-menu-btn" class="text-gray-800 hover:text-blue-800 focus:outline-none">
+            <i class="fa-solid fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
+      <div class="px-4 py-3 space-y-2">
+        <a href="#accueil" data-i18n="nav.home" class="block py-2 text-gray-700 hover:text-blue-800 font-medium border-b border-gray-100">Accueil</a>
+        <a href="#services" data-i18n="nav.services" class="block py-2 text-gray-700 hover:text-blue-800 font-medium border-b border-gray-100">Services Industriels</a>
+        <a href="#vente" data-i18n="nav.sales" class="block py-2 text-gray-700 hover:text-blue-800 font-medium border-b border-gray-100">Achat & Vente</a>
+        <a href="#contact" data-i18n="nav.quote" class="block mt-4 text-center bg-blue-800 text-white py-3 rounded-md font-bold">Demander un Devis</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero (NO PHOTO) -->
+  <section id="accueil" class="hero-bg min-h-screen flex items-center justify-center text-center px-4 pt-16 relative">
+    <div class="absolute inset-0 bg-gradient-to-r from-black/40 to-black/10 z-0"></div>
+
+    <div class="max-w-5xl mx-auto text-white relative z-10">
+      <span data-i18n="hero.badge"
+            class="bg-blue-800 text-white text-xs md:text-sm font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4 inline-block">
+        Service B2B & Industriel
+      </span>
+
+      <h1 data-i18n="hero.title" class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
+        Maintenance de Buanderies Industrielles au Maroc
+      </h1>
+
+      <p data-i18n-html="hero.subtitle" class="text-lg md:text-2xl mb-10 text-gray-200 max-w-3xl mx-auto font-light">
+        Le partenaire technique des <span class="text-blue-400 font-semibold">Hôtels, Hôpitaux, et Blanchisseries Industrielles</span>.
+        Dépannage d'urgence, maintenance préventive et négoce de machines lourdes.
+      </p>
+
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#contact"
+           class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-4 px-8 rounded-md transition text-lg shadow-lg hover:shadow-xl flex items-center justify-center">
+          <i class="fa-solid fa-calendar-check mr-2"></i>
+          <span data-i18n="hero.btn1">Planifier une maintenance</span>
+        </a>
+
+        <a href="#vente"
+           class="bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:bg-white hover:text-blue-900 text-white font-bold py-4 px-8 rounded-md transition text-lg flex items-center justify-center">
+          <i class="fa-solid fa-cart-flatbed mr-2"></i>
+          <span data-i18n="hero.btn2">Catalogue Machines</span>
+        </a>
+      </div>
+
+      <div class="mt-12 flex flex-wrap justify-center gap-6 md:gap-12 opacity-90">
+        <div class="flex items-center space-x-2">
+          <i class="fa-solid fa-hotel text-2xl"></i>
+          <span class="font-bold" data-i18n="hero.trust1">Hôtellerie</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <i class="fa-solid fa-hospital text-2xl"></i>
+          <span class="font-bold" data-i18n="hero.trust2">Santé</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <i class="fa-solid fa-industry text-2xl"></i>
+          <span class="font-bold" data-i18n="hero.trust3">Usines</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 data-i18n="intro.title" class="text-3xl font-bold text-gray-900 mb-4">Votre Partenaire de Confiance au Maroc</h2>
+        <p data-i18n="intro.text" class="text-lg text-gray-600 max-w-3xl mx-auto">
+          Basés à Casablanca, nous comprenons l'importance critique de vos machines pour votre laverie ou pressing.
+          Nous intervenons rapidement dans toute la région pour garantir la continuité de votre activité.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div class="p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition">
+          <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fa-solid fa-location-dot text-blue-600 text-2xl"></i>
+          </div>
+          <h3 data-i18n="intro.card1.title" class="text-xl font-semibold mb-2">Intervention Locale</h3>
+          <p data-i18n="intro.card1.text" class="text-gray-600">Service rapide à Casablanca et ses environs. Nous sommes proches de vous.</p>
+        </div>
+
+        <div class="p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition">
+          <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fa-solid fa-clock text-blue-600 text-2xl"></i>
+          </div>
+          <h3 data-i18n="intro.card2.title" class="text-xl font-semibold mb-2">Disponibilité</h3>
+          <p data-i18n="intro.card2.text" class="text-gray-600">Réactivité pour minimiser le temps d'arrêt de vos machines.</p>
+        </div>
+
+        <div class="p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition">
+          <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fa-solid fa-handshake text-blue-600 text-2xl"></i>
+          </div>
+          <h3 data-i18n="intro.card3.title" class="text-xl font-semibold mb-2">Expertise Technique</h3>
+          <p data-i18n="intro.card3.text" class="text-gray-600">Spécialistes des machines industrielles et professionnelles.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services (NO PHOTO) -->
+  <section id="services" class="py-16 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 data-i18n="services.title" class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Services Techniques Haute Capacité</h2>
+        <p data-i18n="services.subtitle" class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Expertise dédiée aux infrastructures de blanchisserie industrielle, hospitalière et hôtelière.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+        <!-- Visual panel instead of image -->
+        <div class="relative">
+          <div class="rounded-lg shadow-2xl w-full h-96 border-4 border-white bg-gradient-to-br from-blue-900 via-slate-900 to-gray-900 flex items-center justify-center">
+            <div class="text-center px-6">
+              <i class="fa-solid fa-gears text-white/90 text-6xl mb-4"></i>
+              <p data-i18n="services.visual.title" class="text-white font-extrabold text-2xl mb-2">Maintenance Industrielle</p>
+              <p data-i18n="services.visual.subtitle" class="text-blue-100 text-sm md:text-base">
+                Diagnostic • Réparation • Préventif • Installation
+              </p>
+            </div>
+          </div>
+
+          <div class="absolute -bottom-6 -right-6 bg-blue-800 text-white p-6 rounded-lg shadow-xl hidden md:block">
+            <div class="text-3xl font-bold">24/7</div>
+            <div data-i18n="services.support" class="text-sm">Support Technique</div>
+          </div>
+        </div>
+
+        <div>
+          <h3 data-i18n="services.block.title" class="text-2xl font-bold text-gray-900 mb-4">Maintenance et Réparation Industrielle</h3>
+          <p data-i18n="services.block.text" class="text-gray-600 mb-6 text-lg">
+            Nous comprenons que chaque heure d'arrêt coûte cher à votre production.
+            Nos ingénieurs interviennent sur les équipements de gros volume : Tunnels de lavage,
+            essoreuses centrifuges, et lignes de finition.
+          </p>
+
+          <ul class="space-y-4">
+            <li class="flex items-start text-gray-700">
+              <div class="bg-blue-100 p-1 rounded mr-3 mt-1"><i class="fa-solid fa-gears text-blue-600 text-sm"></i></div>
+              <span data-i18n-html="services.li1">
+                <strong>Diagnostic Avancé :</strong> Analyse des automates (PLC), variateurs de fréquence et systèmes hydrauliques.
+              </span>
+            </li>
+            <li class="flex items-start text-gray-700">
+              <div class="bg-blue-100 p-1 rounded mr-3 mt-1"><i class="fa-solid fa-screwdriver-wrench text-blue-600 text-sm"></i></div>
+              <span data-i18n-html="services.li2">
+                <strong>Révision Mécanique Lourde :</strong> Remplacement de roulements de tambour, joints de hublot industriels, et amortisseurs.
+              </span>
+            </li>
+            <li class="flex items-start text-gray-700">
+              <div class="bg-blue-100 p-1 rounded mr-3 mt-1"><i class="fa-solid fa-microchip text-blue-600 text-sm"></i></div>
+              <span data-i18n-html="services.li3">
+                <strong>Électronique de Puissance :</strong> Réparation de cartes de commande et reprogrammation des cycles.
+              </span>
+            </li>
+            <li class="flex items-start text-gray-700">
+              <div class="bg-blue-100 p-1 rounded mr-3 mt-1"><i class="fa-solid fa-calendar-days text-blue-600 text-sm"></i></div>
+              <span data-i18n-html="services.li4">
+                <strong>Contrats de Maintenance :</strong> Visites préventives planifiées pour éviter les arrêts de production.
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-white p-8 lg:p-12 rounded-xl shadow-lg border-t-4 border-blue-800">
+        <h3 data-i18n="services.expertise.title" class="text-2xl font-bold text-gray-900 mb-10 text-center">
+          Expertise Multi-Marques & Multi-Équipements
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div>
+            <h4 class="text-xl font-bold text-blue-800 mb-6 flex items-center border-b pb-2">
+              <i class="fa-solid fa-industry mr-3"></i>
+              <span data-i18n="services.equipment.title">Parc Machine Industriel</span>
+            </h4>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="flex items-center text-gray-700 p-3 bg-gray-50 rounded hover:bg-blue-50 transition border border-gray-100">
+                <i class="fa-solid fa-train-subway text-blue-600 mr-3"></i> <span data-i18n="services.eq1">Tunnels de Lavage</span>
+              </div>
+              <div class="flex items-center text-gray-700 p-3 bg-gray-50 rounded hover:bg-blue-50 transition border border-gray-100">
+                <i class="fa-solid fa-wind text-blue-600 mr-3"></i> <span data-i18n="services.eq2">Séchoirs Rotatifs</span>
+              </div>
+              <div class="flex items-center text-gray-700 p-3 bg-gray-50 rounded hover:bg-blue-50 transition border border-gray-100">
+                <i class="fa-solid fa-sheet-plastic text-blue-600 mr-3"></i> <span data-i18n="services.eq3">Calandres Murales</span>
+              </div>
+              <div class="flex items-center text-gray-700 p-3 bg-gray-50 rounded hover:bg-blue-50 transition border border-gray-100">
+                <i class="fa-solid fa-shirt text-blue-600 mr-3"></i> <span data-i18n="services.eq4">Mannequins de Repassage</span>
+              </div>
+              <div class="flex items-center text-gray-700 p-3 bg-gray-50 rounded hover:bg-blue-50 transition border border-gray-100">
+                <i class="fa-solid fa-soap text-blue-600 mr-3"></i> <span data-i18n="services.eq5">Systèmes de Dosage</span>
+              </div>
+              <div class="flex items-center text-gray-700 p-3 bg-gray-50 rounded hover:bg-blue-50 transition border border-gray-100">
+                <i class="fa-solid fa-temperature-arrow-up text-blue-600 mr-3"></i> <span data-i18n="services.eq6">Chaudières & Vapeur</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-xl font-bold text-blue-800 mb-6 flex items-center border-b pb-2">
+              <i class="fa-solid fa-wrench mr-3"></i>
+              <span data-i18n="services.interventions.title">Interventions Complexes</span>
+            </h4>
+
+            <ul class="space-y-3 text-gray-600">
+              <li class="flex items-start bg-red-50 p-2 rounded">
+                <span class="text-red-600 font-bold mr-3" data-i18n="services.urgent">URGENT</span>
+                <span data-i18n="services.pb1">Arrêt complet de tunnel de lavage</span>
+              </li>
+              <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i> <span data-i18n="services.pb2">Remplacement de tapis de calandre</span></li>
+              <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i> <span data-i18n="services.pb3">Recalibrage de variateurs de fréquence</span></li>
+              <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i> <span data-i18n="services.pb4">Réparation de fuites hydrauliques haute pression</span></li>
+              <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i> <span data-i18n="services.pb5">Mise aux normes électriques industrielles</span></li>
+              <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i> <span data-i18n="services.pb6">Optimisation des cycles (économie eau/énergie)</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Urgency -->
+  <section class="bg-blue-600 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 data-i18n="urgent.title" class="text-3xl font-bold text-white mb-4">Une panne bloque votre activité ?</h2>
+      <p data-i18n="urgent.text" class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+        Ne perdez pas de clients. Notre équipe d'intervention rapide à Casablanca est prête à vous dépanner.
+      </p>
+
+      <a href="tel:+212668448015" class="inline-flex items-center bg-white text-blue-600 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition shadow-lg text-lg">
+        <i class="fa-solid fa-phone mr-3"></i> <span data-i18n="urgent.btn">Appeler le technicien</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Sales (already NO PHOTO) -->
+  <section id="vente" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+
+        <div class="order-2 md:order-1">
+          <span data-i18n="sales.badge" class="text-blue-600 font-bold uppercase tracking-wider text-sm mb-2 block">
+            Négoce & Installation
+          </span>
+
+          <h3 data-i18n="sales.title" class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Fourniture d'Équipements Industriels
+          </h3>
+
+          <p data-i18n="sales.text" class="text-gray-600 mb-6 text-lg">
+            Optimisez votre production avec des équipements performants. Nous proposons des machines neuves et reconditionnées
+            des leaders mondiaux (Kannegiesser, Jensen, Girbau, Primus).
+          </p>
+
+          <div class="space-y-6 mb-8">
+            <div class="flex items-start group">
+              <div class="flex-shrink-0 bg-blue-100 group-hover:bg-blue-600 transition duration-300 rounded-lg p-3 mt-1">
+                <i class="fa-solid fa-award text-blue-600 group-hover:text-white text-lg"></i>
+              </div>
+              <div class="ml-4">
+                <h4 data-i18n="sales.card1.title" class="text-lg font-bold text-gray-900">Machines Reconditionnées Certifiées</h4>
+                <p data-i18n="sales.card1.text" class="text-gray-600">Révision complète en atelier (roulements, électronique, étanchéité) avec garantie 6 à 12 mois.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start group">
+              <div class="flex-shrink-0 bg-blue-100 group-hover:bg-blue-600 transition duration-300 rounded-lg p-3 mt-1">
+                <i class="fa-solid fa-ruler-combined text-blue-600 group-hover:text-white text-lg"></i>
+              </div>
+              <div class="ml-4">
+                <h4 data-i18n="sales.card2.title" class="text-lg font-bold text-gray-900">Installation Clé en Main</h4>
+                <p data-i18n="sales.card2.text" class="text-gray-600">Étude d'implantation, raccordements fluides/élec, mise en service et formation de votre personnel.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start group">
+              <div class="flex-shrink-0 bg-blue-100 group-hover:bg-blue-600 transition duration-300 rounded-lg p-3 mt-1">
+                <i class="fa-solid fa-hand-holding-dollar text-blue-600 group-hover:text-white text-lg"></i>
+              </div>
+              <div class="ml-4">
+                <h4 data-i18n="sales.card3.title" class="text-lg font-bold text-gray-900">Reprise de Parc Ancien</h4>
+                <p data-i18n="sales.card3.text" class="text-gray-600">Valorisation de vos anciens équipements dans le cadre d'un renouvellement.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#contact" data-i18n="sales.btn1"
+               class="inline-block bg-gray-900 text-white px-6 py-3 rounded-md hover:bg-gray-800 transition font-semibold text-center">
+              Consulter le catalogue
+            </a>
+            <a href="#contact" data-i18n="sales.btn2"
+               class="inline-block bg-white border border-gray-300 text-gray-700 px-6 py-3 rounded-md hover:bg-gray-50 transition font-semibold text-center">
+              Demander une reprise
+            </a>
+          </div>
+        </div>
+
+        <div class="order-1 md:order-2">
+          <div class="rounded-xl shadow-2xl bg-gradient-to-br from-blue-900 to-gray-900 h-[500px] flex items-end p-8">
+            <div>
+              <p data-i18n="sales.overlayTitle" class="text-white font-bold text-2xl mb-2">
+                Partenaire des Grandes Marques
+              </p>
+              <div class="flex flex-wrap gap-3 text-sm text-gray-300 font-mono">
+                <span class="bg-white/20 px-2 py-1 rounded">KANNEGIESSER</span>
+                <span class="bg-white/20 px-2 py-1 rounded">JENSEN</span>
+                <span class="bg-white/20 px-2 py-1 rounded">GIRBAU</span>
+                <span class="bg-white/20 px-2 py-1 rounded">ELECTROLUX</span>
+                <span class="bg-white/20 px-2 py-1 rounded">PRIMUS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="bg-blue-900 py-12 border-b border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div class="text-4xl font-bold text-white mb-2">10+</div>
+          <div data-i18n="stats.s1" class="text-blue-200 text-sm uppercase tracking-wide">Années d'Expérience</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold text-white mb-2">50+</div>
+          <div data-i18n="stats.s2" class="text-blue-200 text-sm uppercase tracking-wide">Pressings Partenaires</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold text-white mb-2">24h</div>
+          <div data-i18n="stats.s3" class="text-blue-200 text-sm uppercase tracking-wide">Délai d'Intervention</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold text-white mb-2">100%</div>
+          <div data-i18n="stats.s4" class="text-blue-200 text-sm uppercase tracking-wide">Satisfaction Garantie</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16 bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div>
+          <h2 data-i18n="contact.title" class="text-3xl font-bold mb-6">Contactez-nous</h2>
+          <p data-i18n="contact.text" class="text-gray-400 mb-8">
+            Besoin d'un dépannage urgent ou d'un devis pour une machine ? Appelez-nous ou remplissez le formulaire.
+            Nous intervenons rapidement à Casablanca.
+          </p>
+
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <i class="fa-solid fa-phone text-blue-500 text-xl mt-1 mr-4"></i>
+              <div>
+                <h4 data-i18n="contact.phoneTitle" class="font-semibold text-lg">Téléphone</h4>
+                <p class="text-gray-400">+212 668448015</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <i class="fa-solid fa-envelope text-blue-500 text-xl mt-1 mr-4"></i>
+              <div>
+                <h4 data-i18n="contact.emailTitle" class="font-semibold text-lg">Email</h4>
+                <p class="text-gray-400">muhammaddelll@outlook.com</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <i class="fa-solid fa-map-location-dot text-blue-500 text-xl mt-1 mr-4"></i>
+              <div>
+                <h4 data-i18n="contact.areaTitle" class="font-semibold text-lg">Zone d'intervention</h4>
+                <p data-i18n="contact.areaText" class="text-gray-400">Casablanca et régions, Maroc</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Netlify Forms -->
+        <div class="bg-gray-800 p-8 rounded-lg shadow-xl border border-gray-700">
+          <h3 data-i18n="form.title" class="text-xl font-bold text-white mb-6 border-b border-gray-700 pb-2">
+            Formulaire Professionnel
+          </h3>
+
+          <form
+            name="contact"
+            method="POST"
+            action="/merci.html"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            class="space-y-4"
+          >
+            <input type="hidden" name="form-name" value="contact" />
+            <p class="hidden">
+              <label>Don’t fill this out: <input name="bot-field" type="text" /></label>
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label for="company" data-i18n="form.company" class="block text-sm font-medium text-gray-300 mb-1">Société / Établissement</label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  required
+                  data-i18n-placeholder="form.companyPH"
+                  class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:border-blue-500 text-white"
+                  placeholder="Nom de l'entreprise"
+                />
+              </div>
+
+              <div>
+                <label for="name" data-i18n="form.name" class="block text-sm font-medium text-gray-300 mb-1">Contact Principal</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  data-i18n-placeholder="form.namePH"
+                  class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:border-blue-500 text-white"
+                  placeholder="Nom du responsable"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="phone" data-i18n="form.phone" class="block text-sm font-medium text-gray-300 mb-1">Téléphone Direct</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                data-i18n-placeholder="form.phonePH"
+                class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:border-blue-500 text-white"
+                placeholder="+212..."
+              />
+            </div>
+
+            <div>
+              <label for="service-type" data-i18n="form.need" class="block text-sm font-medium text-gray-300 mb-1">Type de Besoin</label>
+              <select
+                id="service-type"
+                name="serviceType"
+                class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:border-blue-500 text-white"
+              >
+                <option data-i18n="form.opt1">Dépannage Urgent (Arrêt Production)</option>
+                <option data-i18n="form.opt2">Contrat de Maintenance</option>
+                <option data-i18n="form.opt3">Projet d'Achat / Installation</option>
+                <option data-i18n="form.opt4">Audit Technique</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message" data-i18n="form.details" class="block text-sm font-medium text-gray-300 mb-1">Détails techniques</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                data-i18n-placeholder="form.detailsPH"
+                class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:border-blue-500 text-white"
+                placeholder="Type de machines, marques, description de la panne..."
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              data-i18n="form.submit"
+              class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-md transition shadow-lg transform hover:-translate-y-1"
+            >
+              Demander une intervention
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-950 text-gray-400 py-12 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div class="col-span-1 md:col-span-2">
+          <div class="flex items-center mb-4">
+            <i class="fa-solid fa-screwdriver-wrench text-blue-600 text-2xl mr-2"></i>
+            <span data-i18n="footer.brand" class="font-bold text-xl text-white">Lavomatique Expert Casa</span>
+          </div>
+          <p data-i18n="footer.text" class="text-sm leading-relaxed mb-4">
+            Votre partenaire de confiance pour la maintenance, la réparation et la vente de matériel de blanchisserie industrielle
+            à Casablanca et partout au Maroc.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white transition" aria-label="Facebook"><i class="fa-brands fa-facebook text-xl"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white transition" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp text-xl"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white transition" aria-label="LinkedIn"><i class="fa-brands fa-linkedin text-xl"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h3 data-i18n="footer.quickTitle" class="text-white font-semibold mb-4 uppercase text-sm tracking-wider">Liens Rapides</h3>
+          <ul class="space-y-2">
+            <li><a href="#accueil" data-i18n="footer.home" class="hover:text-blue-500 transition">Accueil</a></li>
+            <li><a href="#services" data-i18n="footer.services" class="hover:text-blue-500 transition">Services de Réparation</a></li>
+            <li><a href="#vente" data-i18n="footer.sales" class="hover:text-blue-500 transition">Achat & Vente</a></li>
+            <li><a href="#contact" data-i18n="footer.contact" class="hover:text-blue-500 transition">Contact & Devis</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 data-i18n="footer.contactTitle" class="text-white font-semibold mb-4 uppercase text-sm tracking-wider">Nous Contacter</h3>
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-start">
+              <i class="fa-solid fa-location-dot mt-1 mr-2 text-blue-600"></i>
+              <span data-i18n="footer.address">Casablanca, Maroc</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fa-solid fa-phone mr-2 text-blue-600"></i> +212 668448015
+            </li>
+            <li class="flex items-center">
+              <i class="fa-solid fa-envelope mr-2 text-blue-600"></i> muhammaddelll@outlook.com
+            </li>
+            <li class="flex items-start mt-2">
+              <i class="fa-solid fa-clock mt-1 mr-2 text-blue-600"></i>
+              <span data-i18n-html="footer.hours">Lun - Sam: 8h00 - 19h00<br>Urgences: 24/7</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 pt-8 text-center text-sm">
+        <p>&copy; <span id="year"></span> <span data-i18n="footer.rights">Lavomatique Expert Casa. Tous droits réservés.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp -->
+  <a
+    href="https://wa.me/212668448015"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl z-50 flex items-center justify-center transition-transform hover:scale-110 group"
+    aria-label="WhatsApp"
+  >
+    <i class="fa-brands fa-whatsapp text-4xl"></i>
+    <span data-i18n="whatsapp.tooltip"
+          class="absolute right-full mr-4 bg-white text-gray-800 px-4 py-2 rounded-lg shadow-lg text-sm font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      Discuter sur WhatsApp
+    </span>
+  </a>
+
+  <script>
+    // Mobile menu toggle
+    const btn = document.getElementById("mobile-menu-btn");
+    const menu = document.getElementById("mobile-menu");
+    btn.addEventListener("click", () => menu.classList.toggle("hidden"));
+
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Translations (only added 2 keys for the Services visual panel)
+    const translations = {
+      fr: {
+        "meta.title": "Services Machines de Buanderie - Casablanca",
+        "brand.name": "Lavomatique Industriel Casa",
+        "nav.home": "Accueil",
+        "nav.services": "Services Industriels",
+        "nav.sales": "Matériel Pro",
+        "nav.quote": "Devis Professionnel",
+
+        "hero.badge": "Service B2B & Industriel",
+        "hero.title": "Maintenance de Buanderies Industrielles au Maroc",
+        "hero.subtitle": `Le partenaire technique des <span class="text-blue-400 font-semibold">Hôtels, Hôpitaux, et Blanchisseries Industrielles</span>. Dépannage d'urgence, maintenance préventive et négoce de machines lourdes.`,
+        "hero.btn1": "Planifier une maintenance",
+        "hero.btn2": "Catalogue Machines",
+        "hero.trust1": "Hôtellerie",
+        "hero.trust2": "Santé",
+        "hero.trust3": "Usines",
+
+        "intro.title": "Votre Partenaire de Confiance au Maroc",
+        "intro.text": "Basés à Casablanca, nous comprenons l'importance critique de vos machines pour votre laverie ou pressing. Nous intervenons rapidement dans toute la région pour garantir la continuité de votre activité.",
+        "intro.card1.title": "Intervention Locale",
+        "intro.card1.text": "Service rapide à Casablanca et ses environs. Nous sommes proches de vous.",
+        "intro.card2.title": "Disponibilité",
+        "intro.card2.text": "Réactivité pour minimiser le temps d'arrêt de vos machines.",
+        "intro.card3.title": "Expertise Technique",
+        "intro.card3.text": "Spécialistes des machines industrielles et professionnelles.",
+
+        "services.title": "Services Techniques Haute Capacité",
+        "services.subtitle": "Expertise dédiée aux infrastructures de blanchisserie industrielle, hospitalière et hôtelière.",
+        "services.visual.title": "Maintenance Industrielle",
+        "services.visual.subtitle": "Diagnostic • Réparation • Préventif • Installation",
+        "services.support": "Support Technique",
+        "services.block.title": "Maintenance et Réparation Industrielle",
+        "services.block.text": "Nous comprenons que chaque heure d'arrêt coûte cher à votre production. Nos ingénieurs interviennent sur les équipements de gros volume : Tunnels de lavage, essoreuses centrifuges, et lignes de finition.",
+        "services.li1": "<strong>Diagnostic Avancé :</strong> Analyse des automates (PLC), variateurs de fréquence et systèmes hydrauliques.",
+        "services.li2": "<strong>Révision Mécanique Lourde :</strong> Remplacement de roulements de tambour, joints de hublot industriels, et amortisseurs.",
+        "services.li3": "<strong>Électronique de Puissance :</strong> Réparation de cartes de commande et reprogrammation des cycles.",
+        "services.li4": "<strong>Contrats de Maintenance :</strong> Visites préventives planifiées pour éviter les arrêts de production.",
+
+        "services.expertise.title": "Expertise Multi-Marques & Multi-Équipements",
+        "services.equipment.title": "Parc Machine Industriel",
+        "services.eq1": "Tunnels de Lavage",
+        "services.eq2": "Séchoirs Rotatifs",
+        "services.eq3": "Calandres Murales",
+        "services.eq4": "Mannequins de Repassage",
+        "services.eq5": "Systèmes de Dosage",
+        "services.eq6": "Chaudières & Vapeur",
+
+        "services.interventions.title": "Interventions Complexes",
+        "services.urgent": "URGENT",
+        "services.pb1": "Arrêt complet de tunnel de lavage",
+        "services.pb2": "Remplacement de tapis de calandre",
+        "services.pb3": "Recalibrage de variateurs de fréquence",
+        "services.pb4": "Réparation de fuites hydrauliques haute pression",
+        "services.pb5": "Mise aux normes électriques industrielles",
+        "services.pb6": "Optimisation des cycles (économie eau/énergie)",
+
+        "urgent.title": "Une panne bloque votre activité ?",
+        "urgent.text": "Ne perdez pas de clients. Notre équipe d'intervention rapide à Casablanca est prête à vous dépanner.",
+        "urgent.btn": "Appeler le technicien",
+
+        "sales.badge": "Négoce & Installation",
+        "sales.title": "Fourniture d'Équipements Industriels",
+        "sales.text": "Optimisez votre production avec des équipements performants. Nous proposons des machines neuves et reconditionnées des leaders mondiaux (Kannegiesser, Jensen, Girbau, Primus).",
+        "sales.card1.title": "Machines Reconditionnées Certifiées",
+        "sales.card1.text": "Révision complète en atelier (roulements, électronique, étanchéité) avec garantie 6 à 12 mois.",
+        "sales.card2.title": "Installation Clé en Main",
+        "sales.card2.text": "Étude d'implantation, raccordements fluides/élec, mise en service et formation de votre personnel.",
+        "sales.card3.title": "Reprise de Parc Ancien",
+        "sales.card3.text": "Valorisation de vos anciens équipements dans le cadre d'un renouvellement.",
+        "sales.btn1": "Consulter le catalogue",
+        "sales.btn2": "Demander une reprise",
+        "sales.overlayTitle": "Partenaire des Grandes Marques",
+
+        "stats.s1": "Années d'Expérience",
+        "stats.s2": "Pressings Partenaires",
+        "stats.s3": "Délai d'Intervention",
+        "stats.s4": "Satisfaction Garantie",
+
+        "contact.title": "Contactez-nous",
+        "contact.text": "Besoin d'un dépannage urgent ou d'un devis pour une machine ? Appelez-nous ou remplissez le formulaire. Nous intervenons rapidement à Casablanca.",
+        "contact.phoneTitle": "Téléphone",
+        "contact.emailTitle": "Email",
+        "contact.areaTitle": "Zone d'intervention",
+        "contact.areaText": "Casablanca et régions, Maroc",
+
+        "form.title": "Formulaire Professionnel",
+        "form.company": "Société / Établissement",
+        "form.companyPH": "Nom de l'entreprise",
+        "form.name": "Contact Principal",
+        "form.namePH": "Nom du responsable",
+        "form.phone": "Téléphone Direct",
+        "form.phonePH": "+212...",
+        "form.need": "Type de Besoin",
+        "form.opt1": "Dépannage Urgent (Arrêt Production)",
+        "form.opt2": "Contrat de Maintenance",
+        "form.opt3": "Projet d'Achat / Installation",
+        "form.opt4": "Audit Technique",
+        "form.details": "Détails techniques",
+        "form.detailsPH": "Type de machines, marques, description de la panne...",
+        "form.submit": "Demander une intervention",
+
+        "footer.brand": "Lavomatique Expert Casa",
+        "footer.text": "Votre partenaire de confiance pour la maintenance, la réparation et la vente de matériel de blanchisserie industrielle à Casablanca et partout au Maroc.",
+        "footer.quickTitle": "Liens Rapides",
+        "footer.home": "Accueil",
+        "footer.services": "Services de Réparation",
+        "footer.sales": "Achat & Vente",
+        "footer.contact": "Contact & Devis",
+        "footer.contactTitle": "Nous Contacter",
+        "footer.address": "Casablanca, Maroc",
+        "footer.hours": "Lun - Sam: 8h00 - 19h00<br>Urgences: 24/7",
+        "footer.rights": "Lavomatique Expert Casa. Tous droits réservés.",
+
+        "whatsapp.tooltip": "Discuter sur WhatsApp"
+      },
+
+      en: {
+        "meta.title": "Laundry Machine Services - Casablanca",
+        "brand.name": "Industrial Laundry Casa",
+        "nav.home": "Home",
+        "nav.services": "Industrial Services",
+        "nav.sales": "Equipment",
+        "nav.quote": "Get a Quote",
+
+        "hero.badge": "B2B & Industrial Service",
+        "hero.title": "Industrial Laundry Maintenance in Morocco",
+        "hero.subtitle": `Technical partner for <span class="text-blue-400 font-semibold">Hotels, Hospitals, and Industrial Laundries</span>. Emergency repairs, preventive maintenance, and heavy equipment trading.`,
+        "hero.btn1": "Schedule maintenance",
+        "hero.btn2": "Equipment catalog",
+        "hero.trust1": "Hotels",
+        "hero.trust2": "Healthcare",
+        "hero.trust3": "Factories",
+
+        "intro.title": "Your Trusted Partner in Morocco",
+        "intro.text": "Based in Casablanca, we understand how critical your machines are for your laundry operation. We respond fast across the region to keep your business running.",
+        "intro.card1.title": "Local Response",
+        "intro.card1.text": "Fast service in Casablanca and nearby areas.",
+        "intro.card2.title": "Availability",
+        "intro.card2.text": "Quick response to reduce downtime.",
+        "intro.card3.title": "Technical Expertise",
+        "intro.card3.text": "Specialists in industrial and professional machines.",
+
+        "services.title": "High-Capacity Technical Services",
+        "services.subtitle": "Dedicated expertise for industrial, hospital, and hotel laundry facilities.",
+        "services.visual.title": "Industrial Maintenance",
+        "services.visual.subtitle": "Diagnostics • Repair • Preventive • Installation",
+        "services.support": "Technical Support",
+        "services.block.title": "Industrial Maintenance & Repair",
+        "services.block.text": "We know every hour of downtime is expensive. Our engineers work on high-volume equipment: wash tunnels, centrifugal extractors, and finishing lines.",
+        "services.li1": "<strong>Advanced Diagnostics:</strong> PLCs, variable frequency drives, and hydraulic systems analysis.",
+        "services.li2": "<strong>Heavy Mechanical Overhaul:</strong> Drum bearings, industrial door gaskets, and shock absorbers replacement.",
+        "services.li3": "<strong>Power Electronics:</strong> Control board repair and cycle reprogramming.",
+        "services.li4": "<strong>Maintenance Contracts:</strong> Scheduled preventive visits to avoid downtime.",
+
+        "services.expertise.title": "Multi-Brand & Multi-Equipment Expertise",
+        "services.equipment.title": "Industrial Equipment Fleet",
+        "services.eq1": "Wash Tunnels",
+        "services.eq2": "Rotary Dryers",
+        "services.eq3": "Ironers",
+        "services.eq4": "Finishing Mannequins",
+        "services.eq5": "Dosing Systems",
+        "services.eq6": "Boilers & Steam",
+
+        "services.interventions.title": "Complex Interventions",
+        "services.urgent": "URGENT",
+        "services.pb1": "Complete wash tunnel shutdown",
+        "services.pb2": "Ironer belt replacement",
+        "services.pb3": "VFD recalibration",
+        "services.pb4": "High-pressure hydraulic leak repair",
+        "services.pb5": "Industrial electrical compliance upgrade",
+        "services.pb6": "Cycle optimization (water/energy savings)",
+
+        "urgent.title": "A breakdown is blocking your business?",
+        "urgent.text": "Don’t lose customers. Our fast-response team in Casablanca is ready to help.",
+        "urgent.btn": "Call the technician",
+
+        "sales.badge": "Trading & Installation",
+        "sales.title": "Industrial Equipment Supply",
+        "sales.text": "Boost production with high-performance equipment. We offer new and refurbished machines from global leaders (Kannegiesser, Jensen, Girbau, Primus).",
+        "sales.card1.title": "Certified Refurbished Machines",
+        "sales.card1.text": "Full workshop overhaul (bearings, electronics, sealing) with 6–12 months warranty.",
+        "sales.card2.title": "Turnkey Installation",
+        "sales.card2.text": "Layout study, utilities/electrical connections, commissioning, and staff training.",
+        "sales.card3.title": "Old Equipment Buyback",
+        "sales.card3.text": "We can value your old fleet as part of an upgrade project.",
+        "sales.btn1": "View catalog",
+        "sales.btn2": "Request buyback",
+        "sales.overlayTitle": "Partner of Top Brands",
+
+        "stats.s1": "Years of Experience",
+        "stats.s2": "Partner Laundries",
+        "stats.s3": "Response Time",
+        "stats.s4": "Satisfaction Guaranteed",
+
+        "contact.title": "Contact us",
+        "contact.text": "Need urgent repair or a quote? Call us or fill the form. Fast intervention in Casablanca.",
+        "contact.phoneTitle": "Phone",
+        "contact.emailTitle": "Email",
+        "contact.areaTitle": "Service area",
+        "contact.areaText": "Casablanca and regions, Morocco",
+
+        "form.title": "Business Form",
+        "form.company": "Company / Facility",
+        "form.companyPH": "Company name",
+        "form.name": "Main Contact",
+        "form.namePH": "Manager name",
+        "form.phone": "Direct Phone",
+        "form.phonePH": "+212...",
+        "form.need": "Type of request",
+        "form.opt1": "Urgent repair (production stopped)",
+        "form.opt2": "Maintenance contract",
+        "form.opt3": "Purchase / installation project",
+        "form.opt4": "Technical audit",
+        "form.details": "Technical details",
+        "form.detailsPH": "Machine types, brands, issue description...",
+        "form.submit": "Request intervention",
+
+        "footer.brand": "Lavomatique Expert Casa",
+        "footer.text": "Your trusted partner for maintenance, repair, and sales of industrial laundry equipment in Casablanca and across Morocco.",
+        "footer.quickTitle": "Quick Links",
+        "footer.home": "Home",
+        "footer.services": "Repair Services",
+        "footer.sales": "Buy & Sell",
+        "footer.contact": "Contact & Quote",
+        "footer.contactTitle": "Contact",
+        "footer.address": "Casablanca, Morocco",
+        "footer.hours": "Mon - Sat: 8:00 - 19:00<br>Emergencies: 24/7",
+        "footer.rights": "Lavomatique Expert Casa. All rights reserved.",
+
+        "whatsapp.tooltip": "Chat on WhatsApp"
+      },
+
+      ar: {
+        "meta.title": "خدمات آلات المغسلة - الدار البيضاء",
+        "brand.name": "لافوماتيك صناعي كازا",
+        "nav.home": "الرئيسية",
+        "nav.services": "الخدمات الصناعية",
+        "nav.sales": "المعدات",
+        "nav.quote": "طلب عرض سعر",
+
+        "hero.badge": "خدمة صناعية للأعمال (B2B)",
+        "hero.title": "صيانة المغاسل الصناعية في المغرب",
+        "hero.subtitle": `شريك تقني لـ <span class="text-blue-400 font-semibold">الفنادق والمستشفيات والمغاسل الصناعية</span>. إصلاحات عاجلة، صيانة وقائية، وبيع وشراء معدات ثقيلة.`,
+        "hero.btn1": "حجز صيانة",
+        "hero.btn2": "كتالوج المعدات",
+        "hero.trust1": "الفنادق",
+        "hero.trust2": "الصحة",
+        "hero.trust3": "المصانع",
+
+        "intro.title": "شريكك الموثوق في المغرب",
+        "intro.text": "مقرّنا في الدار البيضاء، ونفهم أهمية آلاتك لاستمرار العمل. نتدخل بسرعة لضمان استمرارية نشاطك.",
+        "intro.card1.title": "تدخل محلي",
+        "intro.card1.text": "خدمة سريعة في الدار البيضاء والمناطق القريبة.",
+        "intro.card2.title": "الجاهزية",
+        "intro.card2.text": "استجابة سريعة لتقليل وقت توقف الآلات.",
+        "intro.card3.title": "خبرة تقنية",
+        "intro.card3.text": "متخصصون في الآلات الصناعية والمهنية.",
+
+        "services.title": "خدمات تقنية عالية القدرة",
+        "services.subtitle": "خبرة مخصصة للبنيات الصناعية ومغاسل المستشفيات والفنادق.",
+        "services.visual.title": "الصيانة الصناعية",
+        "services.visual.subtitle": "تشخيص • إصلاح • وقائي • تركيب",
+        "services.support": "دعم تقني",
+        "services.block.title": "الصيانة والإصلاح الصناعي",
+        "services.block.text": "نعرف أن كل ساعة توقف مكلفة. مهندسونا يعملون على معدات السعة الكبيرة مثل أنفاق الغسيل والعصارات وخطوط التشطيب.",
+        "services.li1": "<strong>تشخيص متقدم:</strong> تحليل PLC ومحولات التردد والأنظمة الهيدروليكية.",
+        "services.li2": "<strong>صيانة ميكانيكية ثقيلة:</strong> تغيير رمان البلي وأختام الأبواب الصناعية وممتصات الصدمات.",
+        "services.li3": "<strong>إلكترونيات القدرة:</strong> إصلاح لوحات التحكم وإعادة برمجة الدورات.",
+        "services.li4": "<strong>عقود صيانة:</strong> زيارات وقائية مجدولة لتفادي التوقف.",
+
+        "services.expertise.title": "خبرة متعددة العلامات والمعدات",
+        "services.equipment.title": "أسطول المعدات الصناعية",
+        "services.eq1": "أنفاق الغسيل",
+        "services.eq2": "مجففات دوّارة",
+        "services.eq3": "مكاوي/كالندر صناعي",
+        "services.eq4": "مانيكان التشطيب",
+        "services.eq5": "أنظمة الجرعات",
+        "services.eq6": "غلايات وبخار",
+
+        "services.interventions.title": "تدخلات معقدة",
+        "services.urgent": "عاجل",
+        "services.pb1": "توقف كامل لنفق الغسيل",
+        "services.pb2": "تغيير سير الكالندر",
+        "services.pb3": "إعادة معايرة محولات التردد",
+        "services.pb4": "إصلاح تسربات هيدروليكية عالية الضغط",
+        "services.pb5": "تحديث مطابق للمعايير الكهربائية الصناعية",
+        "services.pb6": "تحسين الدورات (توفير الماء/الطاقة)",
+
+        "urgent.title": "عطل يوقف نشاطك؟",
+        "urgent.text": "لا تخسر الزبائن. فريق التدخل السريع في الدار البيضاء جاهز للمساعدة.",
+        "urgent.btn": "اتصل بالتقني",
+
+        "sales.badge": "بيع وشراء + تركيب",
+        "sales.title": "توفير معدات صناعية",
+        "sales.text": "حسّن الإنتاج بمعدات عالية الأداء. نوفر آلات جديدة ومجددة من علامات عالمية (Kannegiesser, Jensen, Girbau, Primus).",
+        "sales.card1.title": "آلات مجددة معتمدة",
+        "sales.card1.text": "مراجعة كاملة مع ضمان 6–12 شهرًا.",
+        "sales.card2.title": "تركيب جاهز للتشغيل",
+        "sales.card2.text": "دراسة توزيع، توصيلات، تشغيل أولي وتدريب الموظفين.",
+        "sales.card3.title": "شراء المعدات القديمة",
+        "sales.card3.text": "تقييم معداتك القديمة ضمن مشروع تجديد.",
+        "sales.btn1": "عرض الكتالوج",
+        "sales.btn2": "طلب استرجاع",
+        "sales.overlayTitle": "شريك لأهم العلامات",
+
+        "stats.s1": "سنوات خبرة",
+        "stats.s2": "شركاء",
+        "stats.s3": "وقت التدخل",
+        "stats.s4": "رضا مضمون",
+
+        "contact.title": "اتصل بنا",
+        "contact.text": "تحتاج إصلاحًا عاجلاً أو عرض سعر؟ اتصل بنا أو املأ الاستمارة.",
+        "contact.phoneTitle": "الهاتف",
+        "contact.emailTitle": "البريد",
+        "contact.areaTitle": "مجال الخدمة",
+        "contact.areaText": "الدار البيضاء والمناطق، المغرب",
+
+        "form.title": "استمارة مهنية",
+        "form.company": "الشركة / المؤسسة",
+        "form.companyPH": "اسم الشركة",
+        "form.name": "جهة الاتصال",
+        "form.namePH": "اسم المسؤول",
+        "form.phone": "هاتف مباشر",
+        "form.phonePH": "+212...",
+        "form.need": "نوع الطلب",
+        "form.opt1": "إصلاح عاجل (توقف الإنتاج)",
+        "form.opt2": "عقد صيانة",
+        "form.opt3": "مشروع شراء / تركيب",
+        "form.opt4": "تدقيق تقني",
+        "form.details": "تفاصيل تقنية",
+        "form.detailsPH": "نوع الآلات، العلامة، وصف العطل...",
+        "form.submit": "طلب تدخل",
+
+        "footer.brand": "Lavomatique Expert Casa",
+        "footer.text": "شريكك الموثوق لصيانة وإصلاح وبيع معدات المغاسل الصناعية في الدار البيضاء وفي جميع أنحاء المغرب.",
+        "footer.quickTitle": "روابط سريعة",
+        "footer.home": "الرئيسية",
+        "footer.services": "خدمات الإصلاح",
+        "footer.sales": "بيع وشراء",
+        "footer.contact": "اتصال وعرض سعر",
+        "footer.contactTitle": "اتصل بنا",
+        "footer.address": "الدار البيضاء، المغرب",
+        "footer.hours": "الاثنين - السبت: 8:00 - 19:00<br>الطوارئ: 24/7",
+        "footer.rights": "Lavomatique Expert Casa. جميع الحقوق محفوظة.",
+
+        "whatsapp.tooltip": "تواصل عبر واتساب"
+      }
+    };
+
+    function applyLanguage(lang) {
+      localStorage.setItem("siteLang", lang);
+
+      document.documentElement.lang = lang;
+      document.documentElement.dir = (lang === "ar") ? "rtl" : "ltr";
+
+      const label = document.getElementById("lang-current-label");
+      if (label) label.textContent = lang.toUpperCase();
+
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.dataset.i18n;
+        const value = translations[lang]?.[key];
+        if (value) el.textContent = value;
+      });
+
+      document.querySelectorAll("[data-i18n-html]").forEach(el => {
+        const key = el.dataset.i18nHtml;
+        const value = translations[lang]?.[key];
+        if (value) el.innerHTML = value;
+      });
+
+      document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+        const key = el.dataset.i18nPlaceholder;
+        const value = translations[lang]?.[key];
+        if (value) el.setAttribute("placeholder", value);
+      });
+
+      const titleEl = document.querySelector("title[data-i18n]");
+      if (titleEl) {
+        const key = titleEl.dataset.i18n;
+        const value = translations[lang]?.[key];
+        if (value) document.title = value;
+      }
+    }
+
+    document.querySelectorAll("[data-lang]").forEach(btn => {
+      btn.addEventListener("click", () => applyLanguage(btn.dataset.lang));
+    });
+
+    applyLanguage(localStorage.getItem("siteLang") || "fr");
+  </script>
+</body>
+</html>
